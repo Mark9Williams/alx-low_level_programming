@@ -3,6 +3,7 @@
  * main - this is the main function of the program
  * Return: returns 0
  */
+
 int main(void)
 {
 	char ch;
