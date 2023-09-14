@@ -30,8 +30,15 @@ void times_table(void)
 				if (column < 9)
 				{
 					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
+					if ((row * (column + 1)) > 9)
+					{
+						_putchar(' ');
+					}
+					else
+					{
+						_putchar(' ');
+						_putchar(' ');
+					}
 				}
 			}
 		}
