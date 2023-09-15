@@ -7,14 +7,14 @@
 
 int main(void)
 {
-	long long n1 = 1, n2 = 2, n3, n;
+	long n1 = 1, n2 = 2, n3, n;
 
-	printf("%lld, %lld", n1, n2);
+	printf("%ld, %ld", n1, n2);
 
 	for (n = 3; n <= 50; n++)
 	{
 		n3 = n1 + n2;
-		printf(", %lld", n3);
+		printf(", %ld", n3);
 		n1 = n2;
 		n2 = n3;
 	}
