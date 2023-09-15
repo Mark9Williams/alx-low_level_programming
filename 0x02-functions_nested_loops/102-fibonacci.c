@@ -18,7 +18,7 @@ int main(void)
 		n1 = n2;
 		n2 = n3;
 	}
-	printf('\n');
+	printf("\n");
 
 	return (0);
 }
