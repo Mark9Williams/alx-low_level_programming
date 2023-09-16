@@ -7,7 +7,7 @@
  */
 void print_times_table(int n)
 {
-	int, column, m;
+	int column, row, m;
 
 	if (n < 0 || n > 15)
 		return;
@@ -20,7 +20,7 @@ void print_times_table(int n)
 			{
 				_putchar(',');
 				_putchar(' ');
-				if(m < 10)
+				if (m < 10)
 					_putchar(' ');
 				if (m < 100)
 					_putchar(' ');
