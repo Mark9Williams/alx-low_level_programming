@@ -14,6 +14,8 @@ int main(void)
 	for (n = 3; n <= 98; n++)
 	{
 		n3 = n1 + n2;
+		if (n3 < n1 || n3 < n2)
+			break;
 		printf(", %lu", n3);
 		n1 = n2;
 		n2 = n3;
