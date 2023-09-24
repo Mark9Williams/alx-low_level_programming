@@ -7,22 +7,26 @@
  */
 void print_number(int n)
 {
-	int  reverse = 0, sign = 1;
+	unsigned int  reverse = 0, num;
 
+	if (n == 0)
+	{
+		_putchar('0');
+		return;
+	}
 	if (n < 0)
 	{
-		n = -n;
-		sign = -sign;
+		_putchar('-');
+		num = -n;
 	}
-	else if (n == 0)
-		_putchar('0');
-	while (n)
+	else
+		num = n;
+	while (num)
 	{
 		reverse = (reverse * 10) + (n % 10);
 		n = n / 10;
 	}
-	if (sign < 0)
-		_putchar('-');
+
 	while (reverse)
 	{
 		_putchar(reverse % 10 + '0');
