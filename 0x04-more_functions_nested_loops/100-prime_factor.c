@@ -1,43 +1,30 @@
-#include "main.h"
+#include "math.h"
+#include "stdio.h"
 /**
  * main - finds and prints the largest prime factor
- * largest_prime_factor: finds the largest prime factor
  * Return: always returns 0
  */
-/**
- * is_prime - checks if a given value is prime
- * @n: placeholder for a vale
- * Return: returns an integer
- */
-
 int main(void)
 {
-	unsigned int i, n;
+	long int m;
+	long int max;
+	long int i;
 
-	int is_prime(unsigned int n)
-	{
-		if (n < 1)
-			return (0);
-		for (i = 2; i <= sqrt(n); i++)
-		{
-			if (n % i == 0)
-				return (0);
-		}
-		return (1);
-	}
+	m = 612852475143;
 
-	unsigned int largest_prime_factor(unsigned int n)
+	max = 2;
+
+	for (i = 3; i <= sqrt(m); i = i + 2)
 	{
-		largest = 2;
-		for (i = 2; i <= sqrt(n); i++)
+		while (m % i == 0)
 		{
-			if (n % i == 0 && is_prime(i))
-			{
-				largest = i;
-			}
+			max = i;
+			m = m / i;
 		}
-		return (largest);
 	}
-	n = 612852475143;
-	printf("%u\n", largest_prime_factor(n);
+	if (m > 2)
+	max = m;
+
+	printf("%ld\n", max);
+	return (0);
 }
