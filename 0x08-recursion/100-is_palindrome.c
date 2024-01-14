@@ -35,7 +35,7 @@ int end_string(char *s, int x)
  */
 int check_palindrome(char *s, int y, int x)
 {
-	if (s[y] == s[x] && y == x)
+	if (s[y] == s[x] && y >= x)
 		return (1);
 	else if (s[y] != s[x])
 		return (0);
