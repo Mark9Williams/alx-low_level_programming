@@ -1,3 +1,4 @@
+#include "main.h"
 /**
   * is_palindrome - returns 1 if a string is palindrome and 0 ifnot
   * @s: pointer to the string
