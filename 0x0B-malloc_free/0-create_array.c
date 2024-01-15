@@ -1,4 +1,4 @@
-#include "mmain.h"
+#include "main.h"
 /**
   * create_array - creates an array of characters and initializes it
   * with a specific char
