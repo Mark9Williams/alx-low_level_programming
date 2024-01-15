@@ -13,9 +13,9 @@ char *str_concat(char *s1, char *s2)
 	int len_a, len_b, index_a, index_s2;
 
 	if (s1 == NULL)
-		s1 = " ";
+		s1 = "";
 	if (s2 == NULL)
-		s2 = " ";
+		s2 = "";
 	len_a = 0;
 	while (s1[len_a] != '\0')
 	{
