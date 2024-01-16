@@ -42,7 +42,7 @@ char **strtow(char *str)
 			index++;
 		}
 		strings[i] = malloc((len + 1) * sizeof(char));
-		if (strings == NULL)
+		if (strings[i] == NULL)
 			return (NULL);
 		position = index - len;
 		for (k = i; k <= i; k++)
