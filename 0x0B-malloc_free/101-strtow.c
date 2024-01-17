@@ -14,14 +14,14 @@ char **strtow(char *str)
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 	word_count = 0;
-	for (int i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		while (str[i] == ' ')
 			i++;
-		if (str[i] != '')
+		if (str[i] != ' ')
 			word_count++;
-		while (str[i] != ' ' && str[i] != '\0'
-				i++;
+		while (str[i] != ' ' && str[i] != '\0')
+			i++;
 	}
 	words = malloc((word_count) * sizeof(char *));
 	if (words == NULL)
