@@ -9,7 +9,7 @@
 char **strtow(char *str)
 {
 	char **words;
-	int i, word_count, word_index;
+	int i, word_count, word_index, word_len, j, position, k;
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
@@ -36,10 +36,10 @@ char **strtow(char *str)
 		while (str[i + word_len] != ' ' && str[i + word_len] != '\0')
 			word_len++;
 
-		words[words_index] = malloc((word_len + 1) * sizeof(char));
+		words[word_index] = malloc((word_len + 1) * sizeof(char));
 		if (words[word_index] == NULL)
 		{
-			for (int j = 0; j <= word_index; j++)
+			for (j = 0; j <= word_index; j++)
 				free(words[j]);
 			free(words);
 			return (NULL);
