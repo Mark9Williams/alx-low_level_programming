@@ -35,8 +35,8 @@ char **strtow(char *str)
 		word_len = 0;
 		while (str[i + word_len] != ' ' && str[i + word_len] != '\0')
 			word_len++;
-
-		words[word_index] = malloc((word_len + 1) * sizeof(char));
+		if (word_len > 0)
+			words[word_index] = malloc((word_len + 1) * sizeof(char));
 		if (words[word_index] == NULL && word_index < word_count)
 		{
 			for (j = 0; j <= word_index; j++)
