@@ -8,52 +8,53 @@
   */
 char **strtow(char *str)
 {
-	char **strings;
-	int height, i, len, index, p, k, j, position;
+	char **words;
+	int i, word_count, word_index;
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
-	height = 0;
-	for (i = 0; str[i] != '\0'; i++)
+	word_count = 0;
+	for (int i = 0; str[i] != '\0'; i++)
 	{
-		while (str[i] == ' ' && str[i + 1] != ' ')
-		{
-			height += 1;
-		}
+		while (str[i] == ' ')
+			i++;
+		if (str[i] != '')
+			word_count++;
+		while (str[i] != ' ' && str[i] != '\0'
+				i++;
 	}
-	strings = malloc(height * sizeof(char *));
-	if (strings == NULL)
+	words = malloc((word_count) * sizeof(char *));
+	if (words == NULL)
 		return (NULL);
-	index = 0;
-	for (i = 0; i < height; i++)
+
+	word_index = 0;
+	for (i  = 0; str[i] != '\0'; i++)
 	{
-		len = 0;
-		p = 0;
-		while (str[index] != '\0' && p == 0)
+		while (str[i] == ' ')
+			i++;
+		word_len = 0;
+		while (str[i + word_len] != ' ' && str[i + word_len] != '\0')
+			word_len++;
+
+		words[words_index] = malloc((word_len + 1) * sizeof(char));
+		if (words[word_index] == NULL)
 		{
-			if (str[index] != ' ')
-			{
-				len++;
-			}
-			if (str[index] != ' ' && str[index + 1] == ' ')
-			{
-				p = 1;
-			}
-			index++;
-		}
-		strings[i] = malloc((len + 1) * sizeof(char));
-		if (strings[i] == NULL)
+			for (int j = 0; j <= word_index; j++)
+				free(words[j]);
+			free(words);
 			return (NULL);
-		position = index - len;
-		for (k = i; k <= i; k++)
+		}
+		position = i;
+		for (k = word_index; k == word_index; k++)
 		{
-			for (j = 0; j < len; j++)
+			for (j = 0; j < word_len; j++)
 			{
-				strings[k][j] = str[position];
+				strings[word_index][j] = str[position];
 				position++;
 			}
-			strings[k][j] = '\0';
+			strings[word_index][j] = '\0';
 		}
+		i += (word_len - 1);
 	}
 	return (strings);
 }
