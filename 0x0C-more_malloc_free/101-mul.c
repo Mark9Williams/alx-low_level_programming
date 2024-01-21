@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -5,18 +6,9 @@
   * @num: character to be printed
   * Return: returns nothing
   */
-void print_number(char *num)
+void print_number(int num)
 {
-	while (*num == '0' && *(num + 1) != '\0')
-	{
-		num++;
-	}
-
-	while (*num)
-	{
-		_putchar(*num);
-		num++;
-	}
+	_putchar(num + '0');
 }
 
 /**
@@ -39,7 +31,7 @@ int is_digit(char c)
   */
 int *multiply(char *num1, char *num2, int len1, int len2)
 {
-	int *result, i, j, carry, prod, len;
+	int i, j, *result, carry, prod, len;
 
 	len = len1 + len2;
 	result = malloc(sizeof(int) * len);
@@ -62,10 +54,10 @@ int *multiply(char *num1, char *num2, int len1, int len2)
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		carry = 0;
-		for (i = len1 - 1; i >= 0; j--)
+		for (j = len1 - 1; j >= 0; j--)
 		{
-			prod = (num[i] - '0') * (num2[j] - '0') + result[i + j + 1] + carry;
-			result[i + j + 1] = prod % 10;
+			prod = (num1[i] - '0') * (num2[j] - '0') + result[i + j + 1] + carry;
+			result[i + j + 1] = (prod % 10);
 			carry = prod / 10;
 		}
 		result[i + j + 1] = carry;
@@ -82,7 +74,7 @@ int *multiply(char *num1, char *num2, int len1, int len2)
 int main(int argc, char *argv[])
 {
 	char *num1, *num2;
-	int len 1, len2, *result, i;
+	int len1, len2, *result, i;
 
 	if (argc != 3)
 	{
@@ -95,16 +87,16 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	num1 = arg[1];
-	num2 = arg[2];
+	num1 = argv[1];
+	num2 = argv[2];
 
 	len1 = 0;
 	while (is_digit(num1[len1]))
 	{
-		len++;
+		len1++;
 	}
 
-	len = 0;
+	len2 = 0;
 	while (is_digit(num2[len2]))
 	{
 		len2++;
@@ -122,19 +114,16 @@ int main(int argc, char *argv[])
 	}
 
 	result = multiply(num1, num2, len1, len2);
-
 	if (result[0] == 0)
-	{
-		print_number(reult + 1);
-	}
+		i = 1;
 	else
+		i = 0;
+	for (; i < len1 + len2; i++)
 	{
-		print_number(result);
+		_putchar(result[i] + '0');
 	}
-
 	_putchar('\n');
 	free(result);
 
 	return (0);
 }
-
