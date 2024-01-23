@@ -1,10 +1,11 @@
-#ifndef DOG_H
-#define DOG_H
+#ifndef _DOG_H_
+#define _DOG_H_
 /**
   * struct dog - stores record of a dog
   * @name: name of a dog
   * @age: age of a dog
   * @owner: owner of the dog
+  * Description: structure or record of a dog
   */
 struct dog
 {
