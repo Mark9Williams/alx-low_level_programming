@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "main.h"
 /**
  * main - main function of the program
@@ -17,7 +18,7 @@ int main(int argc, char *argv[])
 		word_len = strlen(argv[i]);
 		for (j = 0; j < word_len; j++)
 		{
-			if (atoi(argv[i][j]) < '0' && atoi(argv[i][j] > '9'))
+			if (argv[i][j] < '0' || argv[i][j] > '9')
 			{
 				printf("Error\n");
 				return (1);
